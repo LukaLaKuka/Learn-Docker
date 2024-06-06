@@ -34,3 +34,19 @@ docker container run \
 -dp 8080:80 \
 dpage/pgadmin4:6.17
 ```
+
+How to build image:
+```bash
+docker build --tag ${new_image_name}:${version} ${path-to-dockerfile}
+
+# Version can be empty empty an just use "--tag ${new_image_name}"
+# but the version gonna be by default "latest"
+```
+
+Example:
+```bash
+ls
+# app.js  Dockerfile  node_modules  package.json
+
+docker build --tag my_new_app:0.0.1 .
+```
